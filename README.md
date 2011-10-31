@@ -1,20 +1,8 @@
 # Soup
 
-Useful clojurescript functions and macros.
+Useful clojurescript macros.
 
-## Namespaces and functions
-
-### me.panzoo.soup.geometry
-
-Miscellaneous functions.
-
-### me.panzoo.soup.dom
-
-Browser DOM manipulation.
-
-### me.panzoo.soup.svg
-
-Functions on SVG DOM and associated types.
+## Namespaces and macros
 
 ### me.panzoo.soup.macros
 
