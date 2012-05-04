@@ -1,9 +1,15 @@
-(ns me.panzoo.soup.macros)
+(ns me.panzoo.soup.macros
+  (:require
+    [clojure.java.io :as io]))
 
 (defmacro defslurp
   "`(def name (slurp uri))` but at compile time."
-  [name uri]
-  `(def ~name ~(slurp uri)))
+  ([name uri]
+   `(def ~name ~(slurp uri)))
+  ([name kind uri]
+   (if (= kind :resource)
+     `(def ~name ~(slurp (io/resource uri)))
+     `(defslurp ~name ~uri))))
 
 (defmacro timeout
   "Execute `forms` in order with `t` millisecond delay between each one.
